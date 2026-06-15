@@ -9,19 +9,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@digitalorbit.agency',
-    link: 'mailto:hello@digitalorbit.agency',
+    value: 'mohdmusab701@gmail.com',
+    link: 'mailto:mohdmusab701@gmail.com',
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+1 (234) 567-890',
-    link: 'tel:+1234567890',
+    value: '+91 9335289386',
+    link: 'tel:+919335289386',
   },
   {
     icon: MapPin,
     title: 'Address',
-    value: '100 Market St, Suite 300\nSan Francisco, CA 94105',
+    value: 'Jaunpur, Uttar Pradesh, India',
     link: null,
   },
   {
@@ -140,7 +140,7 @@ export default function ContactPage() {
                       DigitalOrbit HQ
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      100 Market St, Suite 300, San Francisco, CA 94105
+                      Jaunpur, Uttar Pradesh, India
                     </p>
                   </div>
                 </div>

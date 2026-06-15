@@ -3,10 +3,10 @@ import { TeamMember, Stat } from '@/shared/types';
 export const team: TeamMember[] = [
   {
     id: 1,
-    name: 'Alex Rivera',
+    name: 'Mohd Musab',
     role: 'CEO & Founder',
     bio: 'Former Google engineer with 12+ years in tech. Passionate about building products that make a difference.',
-    avatar: 'AR',
+    avatar: 'MM',
     social: { linkedin: '#', twitter: '#' },
     gradient: 'from-blue-500 to-cyan-500',
   },

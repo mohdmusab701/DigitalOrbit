@@ -95,7 +95,7 @@ const FAQS: FAQ[] = [
   {
     keywords: ["contact", "reach", "talk", "call", "email", "phone", "meet", "consultation"],
     patterns: [/contact/i, /reach.*out/i, /talk.*team/i, /call/i, /consultation/i, /meet/i],
-    response: "You can reach us through:\n\n📧 Email: hello@digitalorbit.in\n📱 Phone: +91 9876543210\n🌐 Website: digitalorbit.in/contact\n\nOr simply share your name and email here, and our team will reach out within 24 hours!",
+    response: "You can reach us through:\n\n📧 Email: mohdmusab701@gmail.com\n📱 Phone: +91 9335289386\n🌐 Website: digitalorbit.in/contact\n\nOr simply share your name and email here, and our team will reach out within 24 hours!",
   },
   {
     keywords: ["about", "company", "who", "team", "digitalorbit", "digital orbit"],
