@@ -7,15 +7,15 @@ import TestimonialsSection from '@/frontend/sections/TestimonialsSection';
 import CTASection from '@/frontend/sections/CTASection';
 
 export default function HomePage() {
-  return (
-    <>
-      <HeroSection />
-      <TrustedBySection />
-      <ServicesOverview />
-      <WhyChooseUsSection />
-      <ProcessSection />
-      <TestimonialsSection />
-      <CTASection />
-    </>
-  );
+ return (
+ <>
+ <HeroSection />
+ <TrustedBySection />
+ <ServicesOverview />
+ <WhyChooseUsSection />
+ <ProcessSection />
+ <TestimonialsSection />
+ <CTASection />
+ </>
+ );
 }
