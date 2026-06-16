@@ -239,7 +239,7 @@ export default function AdminProjectDetailsPage() {
  </div>
 
  <div className="space-y-2">
- <label className="block text-sm font-medium text-muted-foreground">Budget (USD)</label>
+ <label className="block text-sm font-medium text-muted-foreground">Budget (INR)</label>
  <input
  type="number"
  min="0"

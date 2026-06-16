@@ -237,7 +237,7 @@ export default function ContactForm() {
  onChange={handleChange}
  required
  className={`${inputBase} ${fieldErrors.name ? inputError : inputNormal}`}
- placeholder="John Doe"
+ placeholder="DigitalOrbit"
  />
  </div>
  <FieldError message={fieldErrors.name} />

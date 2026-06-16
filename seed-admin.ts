@@ -10,7 +10,7 @@ async function seed() {
   try {
     await dbConnect();
     
-    const email = "admin@digitalorbit.com";
+    const email = "mohdmusab701@gmail.com";
     const existing = await Admin.findOne({ email });
     
     if (existing) {
@@ -25,7 +25,7 @@ async function seed() {
     });
     
     console.log("Admin created successfully!");
-    console.log("Email: admin@digitalorbit.com");
+    console.log("Email: mohdmusab701@gmail.com");
     console.log("Password: password123");
   } catch (error) {
     console.error("Seeding failed:", error);

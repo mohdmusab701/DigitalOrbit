@@ -48,7 +48,7 @@ export default function PricingCard({ plan, index }: PricingCardProps) {
  <div className="mb-8">
  <div className="flex items-baseline gap-1">
  {plan.price !== 'Custom' && (
- <span className="text-lg text-muted-foreground font-medium">$</span>
+ <span className="text-lg text-muted-foreground font-medium">₹</span>
  )}
  <span className={`text-4xl font-bold ${plan.popular ? 'gradient-text' : 'text-foreground'}`}>
  {plan.price}
