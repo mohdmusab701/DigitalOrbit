@@ -93,7 +93,7 @@ export default function Navbar() {
  <div className="flex items-center gap-3">
  <button
  onClick={toggleTheme}
- className="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+ className="p-2 rounded-xl hover:bg-muted dark:hover:bg-white/10 transition-colors"
  aria-label="Toggle theme"
  >
  <AnimatePresence mode="wait">
@@ -116,7 +116,7 @@ export default function Navbar() {
  exit={{ rotate: -90, opacity: 0 }}
  transition={{ duration: 0.2 }}
  >
- <Moon className="w-5 h-5 text-slate-600" />
+ <Moon className="w-5 h-5 text-muted-foreground" />
  </motion.div>
  )
  )}
@@ -133,13 +133,13 @@ export default function Navbar() {
  {/* Mobile Menu Toggle */}
  <button
  onClick={() => setIsOpen(!isOpen)}
- className="lg:hidden p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+ className="lg:hidden p-2 rounded-xl hover:bg-muted dark:hover:bg-white/10 transition-colors"
  aria-label="Toggle menu"
  >
  {isOpen ? (
- <X className="w-5 h-5 text-slate-700 dark:text-white" />
+ <X className="w-5 h-5 text-muted-foreground dark:text-white" />
  ) : (
- <Menu className="w-5 h-5 text-slate-700 dark:text-white" />
+ <Menu className="w-5 h-5 text-muted-foreground dark:text-white" />
  )}
  </button>
  </div>
@@ -171,7 +171,7 @@ export default function Navbar() {
  className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
  isActive
  ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
- : 'text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5'
+ : 'text-muted-foreground hover:bg-muted dark:hover:bg-white/5'
  }`}
  >
  {link.name}

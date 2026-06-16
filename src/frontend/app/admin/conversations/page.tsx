@@ -193,7 +193,7 @@ export default function AdminConversationsPage() {
  const getStatusBadge = (status: string) => {
  const styles: Record<string, string> = {
  active: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
- closed: "bg-slate-100 text-slate-600 dark:bg-slate-700/30 dark:text-slate-400",
+ closed: "bg-muted text-muted-foreground dark:bg-slate-700/30 dark:text-slate-400",
  converted: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
  };
  return styles[status] || styles.active;
@@ -207,9 +207,9 @@ export default function AdminConversationsPage() {
  <div className="flex items-center gap-3 mb-1">
  <button
  onClick={() => router.push("/admin")}
- className="p-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors"
+ className="p-1.5 hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors"
  >
- <ArrowLeft className="w-5 h-5 text-slate-500" />
+ <ArrowLeft className="w-5 h-5 text-muted-foreground" />
  </button>
  <h1 className="text-3xl font-bold text-foreground">Chat Conversations</h1>
  </div>
@@ -218,7 +218,7 @@ export default function AdminConversationsPage() {
  <button
  onClick={handleExportCSV}
  disabled={!conversations.length}
- className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm disabled:opacity-50"
+ className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm disabled:opacity-50"
  >
  <Download className="w-4 h-4" />
  Export CSV
@@ -274,7 +274,7 @@ export default function AdminConversationsPage() {
  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors border ${
  leadFilter
  ? "bg-primary-600 text-white border-primary-600"
- : "bg-card text-muted-foreground border-border hover:bg-slate-50 dark:hover:bg-white/5"
+ : "bg-card text-muted-foreground border-border hover:bg-muted dark:hover:bg-white/5"
  }`}
  >
  <Filter className="w-4 h-4 inline mr-1.5" />
@@ -297,7 +297,7 @@ export default function AdminConversationsPage() {
  </div>
  ) : conversations.length === 0 ? (
  <div className="text-center py-20">
- <MessageSquare className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
+ <MessageSquare className="w-12 h-12 text-slate-300 dark:text-muted-foreground mx-auto mb-3" />
  <p className="text-muted-foreground">No conversations found.</p>
  </div>
  ) : (
@@ -318,7 +318,7 @@ export default function AdminConversationsPage() {
  </thead>
  <tbody className="divide-y divide-slate-100 dark:divide-dark-border/50">
  {conversations.map((conv) => (
- <tr key={conv._id} className="hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
+ <tr key={conv._id} className="hover:bg-muted/50 dark:hover:bg-card/[0.02] transition-colors">
  <td className="py-3.5 px-5">
  <div>
  <p className="font-medium text-foreground">
@@ -346,7 +346,7 @@ export default function AdminConversationsPage() {
  <div className="flex items-center justify-end gap-1.5">
  <button
  onClick={() => handleViewChat(conv)}
- className="p-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors"
+ className="p-1.5 hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors"
  title="View chat"
  >
  <Eye className="w-4 h-4 text-muted-foreground" />
@@ -393,7 +393,7 @@ export default function AdminConversationsPage() {
  <button
  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
  disabled={currentPage === 1}
- className="p-2 rounded-lg border border-border hover:bg-slate-50 dark:hover:bg-white/5 disabled:opacity-40 transition-colors"
+ className="p-2 rounded-lg border border-border hover:bg-muted dark:hover:bg-white/5 disabled:opacity-40 transition-colors"
  >
  <ChevronLeft className="w-4 h-4" />
  </button>
@@ -403,7 +403,7 @@ export default function AdminConversationsPage() {
  <button
  onClick={() => setCurrentPage((p) => Math.min(pagination.totalPages, p + 1))}
  disabled={currentPage === pagination.totalPages}
- className="p-2 rounded-lg border border-border hover:bg-slate-50 dark:hover:bg-white/5 disabled:opacity-40 transition-colors"
+ className="p-2 rounded-lg border border-border hover:bg-muted dark:hover:bg-white/5 disabled:opacity-40 transition-colors"
  >
  <ChevronRight className="w-4 h-4" />
  </button>
@@ -443,7 +443,7 @@ export default function AdminConversationsPage() {
  </div>
  <button
  onClick={() => setViewChat(null)}
- className="p-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors"
+ className="p-1.5 hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors"
  >
  <X className="w-5 h-5 text-slate-400" />
  </button>

@@ -208,9 +208,9 @@ export default function AdminPaymentsPage() {
  case "Failed":
  return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800";
  case "Refunded":
- return "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border border-border";
+ return "bg-muted text-foreground dark:bg-slate-800 dark:text-slate-300 border border-border";
  default:
- return "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border border-border";
+ return "bg-muted text-foreground dark:bg-slate-800 dark:text-slate-300 border border-border";
  }
  };
 
@@ -231,7 +231,7 @@ export default function AdminPaymentsPage() {
  <div className="flex items-center gap-3 mb-1">
  <button
  onClick={() => router.push("/admin")}
- className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
+ className="p-1.5 text-slate-400 hover:text-muted-foreground dark:hover:text-white hover:bg-muted dark:hover:bg-white/10 rounded-lg transition-colors"
  >
  <ArrowLeft className="w-5 h-5" />
  </button>
@@ -336,25 +336,25 @@ export default function AdminPaymentsPage() {
  <div className="overflow-x-auto">
  <table className="w-full text-left border-collapse whitespace-nowrap">
  <thead>
- <tr className="bg-slate-50 dark:bg-white/5 border-b border-border">
- <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Invoice / Date</th>
- <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Client / Project</th>
- <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Amount</th>
- <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Status</th>
- <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">Actions</th>
+ <tr className="bg-muted dark:bg-white/5 border-b border-border">
+ <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Invoice / Date</th>
+ <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Client / Project</th>
+ <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Amount</th>
+ <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Status</th>
+ <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider text-right">Actions</th>
  </tr>
  </thead>
  <tbody className="divide-y divide-slate-100 dark:divide-dark-border">
  {payments.length === 0 ? (
  <tr>
- <td colSpan={5} className="px-6 py-12 text-center text-slate-500">
+ <td colSpan={5} className="px-6 py-12 text-center text-muted-foreground">
  <FileText className="w-12 h-12 text-slate-300 mx-auto mb-3" />
  <p>No invoices found.</p>
  </td>
  </tr>
  ) : (
  payments.map((payment) => (
- <tr key={payment._id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors group">
+ <tr key={payment._id} className="hover:bg-muted dark:hover:bg-card/[0.02] transition-colors group">
  <td className="px-6 py-4">
  <div className="font-medium text-foreground flex items-center gap-2">
  <FileText className="w-4 h-4 text-slate-400" /> {payment.invoiceNumber}
@@ -365,7 +365,7 @@ export default function AdminPaymentsPage() {
  </td>
  <td className="px-6 py-4">
  <div className="font-medium text-foreground">{payment.clientId?.name}</div>
- <div className="text-xs text-slate-500">{payment.projectId?.projectName}</div>
+ <div className="text-xs text-muted-foreground">{payment.projectId?.projectName}</div>
  </td>
  <td className="px-6 py-4">
  <div className="font-semibold text-foreground">
@@ -396,14 +396,14 @@ export default function AdminPaymentsPage() {
  {/* Pagination */}
  {pagination && pagination.totalPages > 1 && (
  <div className="px-6 py-4 border-t border-border flex items-center justify-between bg-muted">
- <p className="text-sm text-slate-600">
+ <p className="text-sm text-muted-foreground">
  Showing page <span className="font-medium">{pagination.page}</span> of <span className="font-medium">{pagination.totalPages}</span>
  </p>
  <div className="flex items-center gap-2">
- <button onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1} className="p-2 rounded-lg border border-slate-200 disabled:opacity-50">
+ <button onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1} className="p-2 rounded-lg border border-border disabled:opacity-50">
  <ChevronLeft className="w-4 h-4" />
  </button>
- <button onClick={() => setCurrentPage((p) => Math.min(pagination.totalPages, p + 1))} disabled={currentPage === pagination.totalPages} className="p-2 rounded-lg border border-slate-200 disabled:opacity-50">
+ <button onClick={() => setCurrentPage((p) => Math.min(pagination.totalPages, p + 1))} disabled={currentPage === pagination.totalPages} className="p-2 rounded-lg border border-border disabled:opacity-50">
  <ChevronRight className="w-4 h-4" />
  </button>
  </div>
@@ -417,7 +417,7 @@ export default function AdminPaymentsPage() {
  <div className="bg-card border border-border rounded-2xl shadow-xl max-w-lg w-full p-6">
  <div className="flex items-center justify-between mb-6">
  <h3 className="text-xl font-bold text-foreground">Create New Invoice</h3>
- <button onClick={closeModal} className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg"><X className="w-5 h-5" /></button>
+ <button onClick={closeModal} className="p-1.5 text-slate-400 hover:text-muted-foreground rounded-lg"><X className="w-5 h-5" /></button>
  </div>
 
  <div className="space-y-4">
@@ -465,14 +465,14 @@ export default function AdminPaymentsPage() {
  type="text"
  value={formData.currency}
  readOnly
- className="w-full px-4 py-2.5 bg-muted/50 border border-border rounded-xl text-sm text-slate-500"
+ className="w-full px-4 py-2.5 bg-muted/50 border border-border rounded-xl text-sm text-muted-foreground"
  />
  </div>
  </div>
  </div>
 
  <div className="flex gap-3 mt-6 pt-4 border-t border-border">
- <button onClick={closeModal} disabled={isSubmitting} className="flex-1 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-medium text-sm">Cancel</button>
+ <button onClick={closeModal} disabled={isSubmitting} className="flex-1 px-4 py-2.5 bg-muted hover:bg-slate-200 text-muted-foreground rounded-xl font-medium text-sm">Cancel</button>
  <button onClick={handleCreateInvoice} disabled={isSubmitting} className="flex-1 px-4 py-2.5 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-semibold text-sm flex justify-center items-center gap-2">
  {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Generating...</> : "Generate Invoice"}
  </button>
@@ -484,12 +484,12 @@ export default function AdminPaymentsPage() {
  {/* Delete Modal */}
  {deleteModalId && (
  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
- <div className="bg-card border border-slate-200 rounded-2xl p-6 w-full max-w-sm text-center">
+ <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm text-center">
  <AlertCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
  <h3 className="text-lg font-bold mb-2">Delete Invoice?</h3>
- <p className="text-sm text-slate-500 mb-6">This action cannot be undone.</p>
+ <p className="text-sm text-muted-foreground mb-6">This action cannot be undone.</p>
  <div className="flex gap-3">
- <button onClick={() => setDeleteModalId(null)} className="flex-1 py-2 bg-slate-100 rounded-lg text-sm font-medium">Cancel</button>
+ <button onClick={() => setDeleteModalId(null)} className="flex-1 py-2 bg-muted rounded-lg text-sm font-medium">Cancel</button>
  <button onClick={() => handleDelete(deleteModalId)} disabled={isSubmitting} className="flex-1 py-2 bg-red-600 text-white rounded-lg text-sm font-medium">
  {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : "Delete"}
  </button>

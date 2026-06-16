@@ -151,10 +151,10 @@ export default function Footer() {
 
  {/* Bottom Bar */}
  <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
- <p className="text-sm text-slate-500">
+ <p className="text-sm text-muted-foreground">
  © {new Date().getFullYear()} DigitalOrbit. All rights reserved.
  </p>
- <div className="flex items-center gap-6 text-sm text-slate-500">
+ <div className="flex items-center gap-6 text-sm text-muted-foreground">
  <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
  <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
  </div>

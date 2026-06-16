@@ -75,7 +75,7 @@ export default function PortfolioCard({ project, index }: PortfolioCardProps) {
  {project.tags.map((tag: string) => (
  <span
  key={tag}
- className="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-white/5 text-muted-foreground rounded-lg"
+ className="px-2.5 py-1 text-xs font-medium bg-muted dark:bg-white/5 text-muted-foreground rounded-lg"
  >
  {tag}
  </span>

@@ -113,13 +113,13 @@ export default function ClientDashboardPage() {
  "In Progress": "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
  Testing: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
  Completed: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
- "On Hold": "bg-slate-100 text-slate-700 dark:bg-slate-700/30 dark:text-slate-400",
+ "On Hold": "bg-muted text-muted-foreground dark:bg-slate-700/30 dark:text-slate-400",
  Pending: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
  Paid: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
  Failed: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
  Refunded: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
  };
- return colors[status] || "bg-slate-100 text-slate-700";
+ return colors[status] || "bg-muted text-muted-foreground";
  };
 
  const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
@@ -157,7 +157,7 @@ export default function ClientDashboardPage() {
  return (
  <div className="min-h-screen bg-muted">
  {/* Header */}
- <header className="sticky top-0 z-30 bg-white/80 /80 backdrop-blur-xl border-b border-slate-200/50 /50">
+ <header className="sticky top-0 z-30 bg-background backdrop-blur-xl border-b border-border">
  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
  <div>
  <h1 className="text-xl font-bold text-foreground">
@@ -185,7 +185,7 @@ export default function ClientDashboardPage() {
  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
  activeTab === tab.id
  ? "bg-primary-600 text-white shadow-md shadow-primary-500/25"
- : "text-muted-foreground hover:bg-slate-100 dark:hover:bg-white/5"
+ : "text-muted-foreground hover:bg-muted dark:hover:bg-white/5"
  }`}
  >
  {tab.icon}
@@ -347,7 +347,7 @@ export default function ClientDashboardPage() {
  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
  {projects.length === 0 ? (
  <div className="col-span-full text-center py-16">
- <FolderOpen className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
+ <FolderOpen className="w-12 h-12 text-slate-300 dark:text-muted-foreground mx-auto mb-3" />
  <p className="text-muted-foreground">No projects assigned yet.</p>
  </div>
  ) : (
@@ -371,7 +371,7 @@ export default function ClientDashboardPage() {
  </span>
  ))}
  {project.technologies.length > 4 && (
- <span className="text-[10px] px-2 py-0.5 bg-muted text-slate-500 rounded-md">
+ <span className="text-[10px] px-2 py-0.5 bg-muted text-muted-foreground rounded-md">
  +{project.technologies.length - 4}
  </span>
  )}
@@ -399,7 +399,7 @@ export default function ClientDashboardPage() {
  >
  {payments.length === 0 ? (
  <div className="text-center py-16">
- <CreditCard className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
+ <CreditCard className="w-12 h-12 text-slate-300 dark:text-muted-foreground mx-auto mb-3" />
  <p className="text-muted-foreground">No invoices yet.</p>
  </div>
  ) : (
@@ -418,7 +418,7 @@ export default function ClientDashboardPage() {
  </thead>
  <tbody className="divide-y divide-slate-100 dark:divide-dark-border/50">
  {payments.map((payment) => (
- <tr key={payment._id} className="hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
+ <tr key={payment._id} className="hover:bg-muted/50 dark:hover:bg-card/[0.02] transition-colors">
  <td className="py-3.5 px-5 font-medium text-foreground">#{payment.invoiceNumber}</td>
  <td className="py-3.5 px-5 text-muted-foreground">{payment.projectId?.projectName || "—"}</td>
  <td className="py-3.5 px-5 font-semibold text-foreground">

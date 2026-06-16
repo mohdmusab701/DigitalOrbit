@@ -26,7 +26,7 @@ export default function LoadingScreen() {
  <p className="text-lg font-bold text-foreground">
  Digital<span className="gradient-text">Orbit</span>
  </p>
- <div className="mt-4 w-32 h-1 bg-slate-100 dark:bg-white/10 rounded-full mx-auto overflow-hidden">
+ <div className="mt-4 w-32 h-1 bg-muted dark:bg-white/10 rounded-full mx-auto overflow-hidden">
  <motion.div
  initial={{ x: '-100%' }}
  animate={{ x: '100%' }}

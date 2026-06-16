@@ -40,7 +40,7 @@ export default function PortfolioPage() {
  className={`px-5 py-2.5 text-sm font-medium rounded-xl transition-all ${
  activeFilter === cat
  ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
- : 'bg-slate-100 dark:bg-white/5 text-muted-foreground hover:bg-slate-200 dark:hover:bg-white/10'
+ : 'bg-muted dark:bg-white/5 text-muted-foreground hover:bg-slate-200 dark:hover:bg-white/10'
  }`}
  >
  {cat}

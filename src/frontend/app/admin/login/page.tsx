@@ -90,7 +90,7 @@ export default function AdminLoginPage() {
  value={email}
  onChange={(e) => setEmail(e.target.value)}
  required
- className="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-border rounded-xl text-sm text-foreground placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
+ className="w-full pl-11 pr-4 py-3 bg-muted dark:bg-white/5 border border-border rounded-xl text-sm text-foreground placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
  placeholder="admin@digitalorbit.com"
  />
  </div>
@@ -107,7 +107,7 @@ export default function AdminLoginPage() {
  value={password}
  onChange={(e) => setPassword(e.target.value)}
  required
- className="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-border rounded-xl text-sm text-foreground placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
+ className="w-full pl-11 pr-4 py-3 bg-muted dark:bg-white/5 border border-border rounded-xl text-sm text-foreground placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
  placeholder="••••••••"
  />
  </div>

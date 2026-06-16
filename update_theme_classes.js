@@ -12,39 +12,38 @@ function walk(dir, callback) {
 }
 
 const replacements = [
-    // Backgrounds & Cards
-    { regex: /\bbg-slate-[0-9]+\/?[0-9]* dark:bg-dark-card\/?[0-9]*\b/g, replacement: 'bg-muted' },
-    { regex: /\bbg-slate-[0-9]+\/?[0-9]* dark:bg-dark-bg\/?[0-9]*\b/g, replacement: 'bg-muted' },
-    { regex: /\bbg-white\/[0-9]+ dark:bg-dark-bg\/[0-9]+\b/g, replacement: 'bg-background/50' },
-    { regex: /\bbg-slate-900 dark:bg-white\b/g, replacement: 'bg-foreground' },
-    { regex: /\bdark:bg-white bg-slate-900\b/g, replacement: 'bg-foreground' },
+    // Fix broken opacities
+    { regex: /\bbg-muted \/[0-9]+\b/g, replacement: 'bg-muted' },
+    { regex: /\bbg-background \/[0-9]+\b/g, replacement: 'bg-background' },
+    { regex: /\bbg-card \/[0-9]+\b/g, replacement: 'bg-card' },
+    { regex: /\bbg-white\/[0-9]+ \/[0-9]+\b/g, replacement: 'bg-background' },
+    { regex: /\bborder-slate-[0-9]+\/[0-9]+ \/[0-9]+\b/g, replacement: 'border-border' },
+    { regex: /\/80 backdrop-blur-xl border border-slate-200\/50 \/50 rounded-3xl p-8 shadow-2xl/g, replacement: 'backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl bg-card' },
+    { regex: /\bbg-white\/80 \/80/g, replacement: 'bg-card' },
     
-    // Text colors
-    { regex: /\btext-slate-500 dark:text-slate-400\b/g, replacement: 'text-muted-foreground' },
-    { regex: /\bdark:text-slate-400 text-slate-500\b/g, replacement: 'text-muted-foreground' },
-    { regex: /\btext-slate-400 dark:text-slate-500\b/g, replacement: 'text-muted-foreground' },
-    { regex: /\bdark:text-slate-500 text-slate-400\b/g, replacement: 'text-muted-foreground' },
-    { regex: /\btext-slate-300 dark:text-slate-700\b/g, replacement: 'text-muted-foreground' },
-    { regex: /\bdark:text-slate-700 text-slate-300\b/g, replacement: 'text-muted-foreground' },
-    { regex: /\btext-white dark:text-slate-900\b/g, replacement: 'text-background' },
-    { regex: /\bdark:text-slate-900 text-white\b/g, replacement: 'text-background' },
+    // Replace all remaining bg-white with bg-card (most common use-case for hardcoded bg-white in these templates)
+    // Wait, replacing ALL bg-white might break some legitimate white icons or specific elements, 
+    // but in a fully theme-aware UI, backgrounds should be bg-background or bg-card.
+    { regex: /\bbg-white\b(?!(\/[0-9]+| text-primary))/g, replacement: 'bg-card' },
+    
+    // Replace remaining hardcoded text colors
+    { regex: /\btext-black\b/g, replacement: 'text-foreground' },
+    { regex: /\btext-slate-900\b/g, replacement: 'text-foreground' },
+    { regex: /\btext-slate-800\b/g, replacement: 'text-foreground' },
+    { regex: /\btext-slate-700\b/g, replacement: 'text-muted-foreground' },
+    { regex: /\btext-slate-600\b/g, replacement: 'text-muted-foreground' },
+    { regex: /\btext-slate-500\b/g, replacement: 'text-muted-foreground' },
 
-    // Borders
-    { regex: /\bborder-slate-[0-9]+ dark:border-dark-border\b/g, replacement: 'border-border' },
-    { regex: /\bdark:border-dark-border border-slate-[0-9]+\b/g, replacement: 'border-border' },
-    { regex: /\bborder-slate-[0-9]+ dark:border-slate-[0-9]+\b/g, replacement: 'border-border' },
-    { regex: /\bdark:border-slate-[0-9]+ border-slate-[0-9]+\b/g, replacement: 'border-border' },
-    { regex: /\bborder-slate-[0-9]+\/50 dark:border-white\/10\b/g, replacement: 'border-border' },
+    // Replace remaining backgrounds
+    { regex: /\bbg-slate-50\b/g, replacement: 'bg-muted' },
+    { regex: /\bbg-slate-100\b/g, replacement: 'bg-muted' },
 
-    // Cleanup explicit variables that might be remaining
-    { regex: /\bdark:bg-dark-card\b/g, replacement: '' },
-    { regex: /\bbg-dark-card\b/g, replacement: 'bg-card' },
-    { regex: /\bdark:bg-dark-bg\b/g, replacement: '' },
-    { regex: /\bbg-dark-bg\b/g, replacement: 'bg-background' },
-    { regex: /\bdark:border-dark-border\b/g, replacement: '' },
-    { regex: /\bborder-dark-border\b/g, replacement: 'border-border' },
-    { regex: /\bdark:text-dark-text\b/g, replacement: '' },
-    { regex: /\btext-dark-text\b/g, replacement: 'text-foreground' },
+    // Replace remaining borders
+    { regex: /\bborder-slate-200\b/g, replacement: 'border-border' },
+    { regex: /\bborder-slate-300\b/g, replacement: 'border-border' },
+    
+    // Fix class spaces
+    { regex: / +/g, replacement: ' ' }
 ];
 
 walk(dir, (filePath) => {
@@ -54,11 +53,13 @@ walk(dir, (filePath) => {
         for (let rule of replacements) {
             newContent = newContent.replace(rule.regex, rule.replacement);
         }
-        // Cleanup double spaces that might be left
-        newContent = newContent.replace(/  +/g, ' ');
+        
+        // Ensure "bg-card text-primary-900" becomes "bg-card text-foreground"
+        newContent = newContent.replace(/\bbg-card text-primary-900\b/g, 'bg-card text-foreground');
+
         if (content !== newContent) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            console.log(`Updated ${filePath}`);
+            console.log(`Cleaned up ${filePath}`);
         }
     }
 });

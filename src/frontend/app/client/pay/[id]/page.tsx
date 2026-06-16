@@ -187,7 +187,7 @@ export default function ClientPayPage() {
 
  {/* ── Error ── */}
  {pageState === "error" && (
- <div className="bg-white/80 /80 backdrop-blur-xl border border-slate-200/50 /50 rounded-3xl p-8 shadow-2xl text-center">
+ <div className="bg-background backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl text-center">
  <AlertCircle className="w-14 h-14 text-red-500 mx-auto mb-4" />
  <h2 className="text-xl font-bold text-foreground mb-2">Invoice Error</h2>
  <p className="text-muted-foreground mb-6">{errorMsg}</p>
@@ -202,13 +202,13 @@ export default function ClientPayPage() {
 
  {/* ── Already Paid ── */}
  {pageState === "already_paid" && (
- <div className="bg-white/80 /80 backdrop-blur-xl border border-slate-200/50 /50 rounded-3xl p-8 shadow-2xl text-center">
+ <div className="bg-background backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl text-center">
  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-5">
  <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400" />
  </div>
  <h2 className="text-xl font-bold text-foreground mb-2">Already Paid</h2>
  <p className="text-muted-foreground mb-1">
- Invoice <span className="font-semibold text-slate-700 dark:text-slate-200">#{invoice?.invoiceNumber}</span> has already been paid.
+ Invoice <span className="font-semibold text-muted-foreground dark:text-slate-200">#{invoice?.invoiceNumber}</span> has already been paid.
  </p>
  <p className="text-2xl font-bold text-green-600 dark:text-green-400 my-4">
  {invoice?.currency} {invoice?.amount.toLocaleString()}
@@ -224,7 +224,7 @@ export default function ClientPayPage() {
 
  {/* ── Ready to Pay ── */}
  {(pageState === "ready" || pageState === "processing") && invoice && (
- <div className="bg-white/80 /80 backdrop-blur-xl border border-slate-200/50 /50 rounded-3xl p-8 shadow-2xl">
+ <div className="bg-background backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl">
  <div className="text-center mb-8">
  <div className="w-16 h-16 bg-gradient-to-tr from-primary-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-xl shadow-primary-500/20">
  <CreditCard className="w-8 h-8 text-white" />
@@ -289,7 +289,7 @@ export default function ClientPayPage() {
 
  {/* ── Success ── */}
  {pageState === "success" && (
- <div className="bg-white/80 /80 backdrop-blur-xl border border-slate-200/50 /50 rounded-3xl p-8 shadow-2xl text-center">
+ <div className="bg-background backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl text-center">
  <motion.div
  initial={{ scale: 0 }}
  animate={{ scale: 1 }}
@@ -300,7 +300,7 @@ export default function ClientPayPage() {
  </motion.div>
  <h2 className="text-2xl font-bold text-foreground mb-2">Payment Successful!</h2>
  <p className="text-muted-foreground mb-6">
- Your payment of <span className="font-semibold text-slate-700 dark:text-slate-200">{invoice?.currency} {invoice?.amount.toLocaleString()}</span> for invoice <span className="font-semibold text-slate-700 dark:text-slate-200">#{invoice?.invoiceNumber}</span> has been received.
+ Your payment of <span className="font-semibold text-muted-foreground dark:text-slate-200">{invoice?.currency} {invoice?.amount.toLocaleString()}</span> for invoice <span className="font-semibold text-muted-foreground dark:text-slate-200">#{invoice?.invoiceNumber}</span> has been received.
  </p>
  <p className="text-sm text-muted-foreground mb-6">A confirmation email has been sent to your registered email address.</p>
  <button
@@ -314,7 +314,7 @@ export default function ClientPayPage() {
 
  {/* ── Failed ── */}
  {pageState === "failed" && (
- <div className="bg-white/80 /80 backdrop-blur-xl border border-slate-200/50 /50 rounded-3xl p-8 shadow-2xl text-center">
+ <div className="bg-background backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl text-center">
  <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-5">
  <XCircle className="w-8 h-8 text-red-600 dark:text-red-400" />
  </div>
@@ -345,7 +345,7 @@ export default function ClientPayPage() {
  <div className="text-center mt-6">
  <button
  onClick={() => router.push("/client/dashboard")}
- className="text-sm text-muted-foreground hover:text-slate-600 dark:hover:text-slate-300 transition-colors inline-flex items-center gap-1"
+ className="text-sm text-muted-foreground hover:text-muted-foreground dark:hover:text-slate-300 transition-colors inline-flex items-center gap-1"
  >
  <ArrowLeft className="w-3.5 h-3.5" />
  Back to Dashboard

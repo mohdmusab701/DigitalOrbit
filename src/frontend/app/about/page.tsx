@@ -197,14 +197,14 @@ export default function AboutPage() {
  <div className="flex items-center justify-center gap-2">
  <a
  href={member.social.linkedin}
- className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-primary-50 dark:hover:bg-primary-900/30 flex items-center justify-center transition-colors"
+ className="w-9 h-9 rounded-lg bg-muted dark:bg-white/5 hover:bg-primary-50 dark:hover:bg-primary-900/30 flex items-center justify-center transition-colors"
  aria-label={`${member.name}'s LinkedIn`}
  >
  <AtSign className="w-4 h-4 text-muted-foreground" />
  </a>
  <a
  href={member.social.twitter}
- className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-primary-50 dark:hover:bg-primary-900/30 flex items-center justify-center transition-colors"
+ className="w-9 h-9 rounded-lg bg-muted dark:bg-white/5 hover:bg-primary-50 dark:hover:bg-primary-900/30 flex items-center justify-center transition-colors"
  aria-label={`${member.name}'s Twitter`}
  >
  <Globe2 className="w-4 h-4 text-muted-foreground" />

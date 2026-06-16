@@ -26,7 +26,7 @@ export default function TrustedBySection() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.08 }}
- className="text-xl lg:text-2xl font-bold text-muted-foreground hover:text-slate-400 dark:hover:text-slate-500 transition-colors cursor-default"
+ className="text-xl lg:text-2xl font-bold text-muted-foreground hover:text-slate-400 dark:hover:text-muted-foreground transition-colors cursor-default"
  >
  {name}
  </motion.div>

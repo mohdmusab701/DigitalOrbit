@@ -183,7 +183,7 @@ export default function AdminPage() {
  case "in progress": return "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400 border border-purple-200 dark:border-purple-800";
  case "converted": return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800";
  case "rejected": return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800";
- default: return "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border border-border";
+ default: return "bg-muted text-foreground dark:bg-slate-800 dark:text-slate-300 border border-border";
  }
  };
 
@@ -197,35 +197,35 @@ export default function AdminPage() {
  <div className="flex items-center gap-3">
  <button
  onClick={() => router.push("/admin/payments")}
- className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
+ className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
  >
  <CreditCard className="w-4 h-4" />
  Payments
  </button>
  <button
  onClick={() => router.push("/admin/projects")}
- className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
+ className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
  >
  <FolderOpen className="w-4 h-4" />
  Projects
  </button>
  <button
  onClick={() => router.push("/admin/clients")}
- className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
+ className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
  >
  <Briefcase className="w-4 h-4" />
  Clients
  </button>
  <button
  onClick={() => router.push("/admin/conversations")}
- className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
+ className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
  >
  <MessageSquare className="w-4 h-4" />
  Chats
  </button>
  <button
  onClick={() => router.push("/admin/bookings")}
- className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
+ className="flex items-center gap-2 px-4 py-2 bg-card border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors text-sm font-medium shadow-sm"
  >
  <Calendar className="w-4 h-4" />
  Bookings
@@ -243,7 +243,7 @@ export default function AdminPage() {
  {/* Stats Cards */}
  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
  <div className="bg-card border border-border rounded-xl p-4 shadow-sm flex flex-col items-center text-center">
- <div className="w-10 h-10 bg-slate-50 dark:bg-white/5 rounded-full flex items-center justify-center mb-2">
+ <div className="w-10 h-10 bg-muted dark:bg-white/5 rounded-full flex items-center justify-center mb-2">
  <Users className="w-5 h-5 text-muted-foreground" />
  </div>
  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Total Leads</p>
@@ -309,7 +309,7 @@ export default function AdminPage() {
  <div className="overflow-x-auto">
  <table className="w-full text-left border-collapse whitespace-nowrap">
  <thead>
- <tr className="bg-slate-50 dark:bg-white/5 border-b border-border">
+ <tr className="bg-muted dark:bg-white/5 border-b border-border">
  <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Contact Info</th>
  <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Service / Company</th>
  <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider w-1/3">Message</th>
@@ -319,7 +319,7 @@ export default function AdminPage() {
  </thead>
  <tbody className="divide-y divide-slate-100 dark:divide-dark-border">
  {leads.map((lead) => (
- <tr key={lead._id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors">
+ <tr key={lead._id} className="hover:bg-muted dark:hover:bg-card/[0.02] transition-colors">
  <td className="px-6 py-5">
  <div className="font-medium text-foreground mb-1">{lead.name}</div>
  <div className="flex flex-col gap-1 text-sm text-muted-foreground">
@@ -356,7 +356,7 @@ export default function AdminPage() {
  <option value="rejected">Rejected</option>
  </select>
  {updatingId === lead._id ? (
- <RefreshCw className="w-3 h-3 absolute right-2.5 top-1/2 -translate-y-1/2 animate-spin text-slate-500" />
+ <RefreshCw className="w-3 h-3 absolute right-2.5 top-1/2 -translate-y-1/2 animate-spin text-muted-foreground" />
  ) : (
  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
  <svg className="h-3 w-3 fill-current opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -405,14 +405,14 @@ export default function AdminPage() {
  <button
  onClick={handlePrevPage}
  disabled={currentPage === 1}
- className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+ className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
  >
  <ChevronLeft className="w-4 h-4" />
  </button>
  <button
  onClick={handleNextPage}
  disabled={currentPage === pagination.totalPages}
- className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+ className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
  >
  <ChevronRight className="w-4 h-4" />
  </button>
@@ -430,7 +430,7 @@ export default function AdminPage() {
  <h3 className="text-xl font-bold text-foreground">Convert to Client</h3>
  <button
  onClick={() => setConvertModalLead(null)}
- className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
+ className="p-1.5 text-slate-400 hover:text-muted-foreground dark:hover:text-slate-300 hover:bg-muted dark:hover:bg-white/10 rounded-lg transition-colors"
  >
  <X className="w-5 h-5" />
  </button>
@@ -469,7 +469,7 @@ export default function AdminPage() {
  <button
  onClick={() => setConvertModalLead(null)}
  disabled={isConverting}
- className="flex-1 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-muted-foreground rounded-xl transition-colors font-medium text-sm disabled:opacity-50"
+ className="flex-1 px-4 py-2.5 bg-muted hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-muted-foreground rounded-xl transition-colors font-medium text-sm disabled:opacity-50"
  >
  Cancel
  </button>
@@ -501,7 +501,7 @@ export default function AdminPage() {
  <button
  onClick={() => setDeleteModalId(null)}
  disabled={isDeleting}
- className="flex-1 px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-muted-foreground rounded-lg transition-colors font-medium text-sm disabled:opacity-50"
+ className="flex-1 px-4 py-2 bg-muted hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-muted-foreground rounded-lg transition-colors font-medium text-sm disabled:opacity-50"
  >
  Cancel
  </button>

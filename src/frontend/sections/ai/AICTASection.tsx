@@ -40,7 +40,7 @@ export default function AICTASection() {
  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
  <Link
  href="/contact"
- className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-bold rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+ className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-card text-foreground font-bold rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
  >
  <span className="relative z-10 flex items-center gap-2">
  Book Free Consultation

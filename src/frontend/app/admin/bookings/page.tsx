@@ -111,7 +111,7 @@ export default function AdminBookingsPage() {
  rejected: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
  rescheduled: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
  completed: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
- cancelled: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400",
+ cancelled: "bg-muted text-muted-foreground dark:bg-slate-800 dark:text-slate-400",
  };
  return styles[status] || styles.pending;
  };
@@ -130,9 +130,9 @@ export default function AdminBookingsPage() {
  <div className="flex items-center gap-3 mb-1">
  <button
  onClick={() => router.push("/admin")}
- className="p-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors"
+ className="p-1.5 hover:bg-muted dark:hover:bg-white/5 rounded-lg transition-colors"
  >
- <ArrowLeft className="w-5 h-5 text-slate-500" />
+ <ArrowLeft className="w-5 h-5 text-muted-foreground" />
  </button>
  <h1 className="text-3xl font-bold text-foreground">Booking Management</h1>
  </div>
@@ -147,7 +147,7 @@ export default function AdminBookingsPage() {
  { label: "Total Bookings", value: stats.total, color: "bg-blue-100 text-blue-600" },
  { label: "Pending Review", value: stats.pending, color: "bg-amber-100 text-amber-600" },
  { label: "Approved Meetings", value: stats.approved, color: "bg-green-100 text-green-600" },
- { label: "Cancelled", value: stats.cancelled, color: "bg-slate-100 text-slate-600" },
+ { label: "Cancelled", value: stats.cancelled, color: "bg-muted text-muted-foreground" },
  ].map((stat) => (
  <div key={stat.label} className="bg-card border border-border rounded-2xl p-5">
  <div className="flex items-center gap-3 mb-2">
@@ -195,7 +195,7 @@ export default function AdminBookingsPage() {
  ) : bookings.length === 0 ? (
  <div className="text-center py-20 border border-border rounded-2xl bg-card">
  <Calendar className="w-12 h-12 text-slate-300 mx-auto mb-3" />
- <p className="text-slate-500">No bookings found.</p>
+ <p className="text-muted-foreground">No bookings found.</p>
  </div>
  ) : (
  <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -210,7 +210,7 @@ export default function AdminBookingsPage() {
  <div className="p-5 border-b border-border flex justify-between items-start">
  <div>
  <h3 className="font-bold text-foreground">{booking.name}</h3>
- <p className="text-sm text-slate-500 truncate">{booking.email}</p>
+ <p className="text-sm text-muted-foreground truncate">{booking.email}</p>
  </div>
  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wide ${getStatusBadge(booking.status)}`}>
  {booking.status}
@@ -225,7 +225,7 @@ export default function AdminBookingsPage() {
  </div>
  <div>
  <p className="font-semibold text-foreground">{format(parseISO(booking.meetingDate), "EEEE, MMM dd")}</p>
- <p className="text-sm text-slate-500">{booking.meetingTime}</p>
+ <p className="text-sm text-muted-foreground">{booking.meetingTime}</p>
  </div>
  </div>
 
@@ -285,7 +285,7 @@ export default function AdminBookingsPage() {
  >
  <div className="px-6 py-4 border-b border-border flex items-center justify-between">
  <h2 className="text-lg font-bold text-foreground">Manage Booking</h2>
- <button onClick={() => setSelectedBooking(null)} className="p-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg">
+ <button onClick={() => setSelectedBooking(null)} className="p-1.5 hover:bg-muted dark:hover:bg-white/5 rounded-lg">
  <X className="w-5 h-5 text-slate-400" />
  </button>
  </div>
@@ -294,19 +294,19 @@ export default function AdminBookingsPage() {
  {/* Details */}
  <div className="grid grid-cols-2 gap-4 text-sm">
  <div>
- <span className="text-slate-500 block mb-1">Visitor Name</span>
+ <span className="text-muted-foreground block mb-1">Visitor Name</span>
  <strong className="text-foreground">{selectedBooking.name}</strong>
  </div>
  <div>
- <span className="text-slate-500 block mb-1">Email</span>
+ <span className="text-muted-foreground block mb-1">Email</span>
  <a href={`mailto:${selectedBooking.email}`} className="text-primary-600 hover:underline">{selectedBooking.email}</a>
  </div>
  <div>
- <span className="text-slate-500 block mb-1">Phone</span>
+ <span className="text-muted-foreground block mb-1">Phone</span>
  <a href={`tel:${selectedBooking.phone}`} className="text-primary-600 hover:underline">{selectedBooking.phone}</a>
  </div>
  <div>
- <span className="text-slate-500 block mb-1">Date & Time</span>
+ <span className="text-muted-foreground block mb-1">Date & Time</span>
  <strong className="text-foreground">{format(parseISO(selectedBooking.meetingDate), "MMM dd, yyyy")} at {selectedBooking.meetingTime}</strong>
  </div>
  </div>

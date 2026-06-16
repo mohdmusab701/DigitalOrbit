@@ -65,7 +65,7 @@ export default function ClientLoginPage() {
  <p className="text-muted-foreground">Sign in to view your projects and invoices.</p>
  </div>
 
- <div className="bg-white/80 /80 backdrop-blur-xl border border-slate-200/50 /50 rounded-3xl p-8 shadow-2xl">
+ <div className="bg-background backdrop-blur-xl border border-border rounded-3xl p-8 shadow-2xl">
  <form onSubmit={handleSubmit} className="space-y-6">
  <AnimatePresence>
  {error && (

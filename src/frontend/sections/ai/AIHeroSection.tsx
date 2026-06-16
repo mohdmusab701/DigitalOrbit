@@ -67,7 +67,7 @@ export default function AIHeroSection() {
  
  <Link
  href="/contact"
- className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 text-foreground font-semibold rounded-2xl border border-slate-200 dark:border-white/10 backdrop-blur-md transition-all hover:shadow-lg w-full sm:w-auto"
+ className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/50 dark:bg-white/5 hover:bg-card dark:hover:bg-white/10 text-foreground font-semibold rounded-2xl border border-border dark:border-white/10 backdrop-blur-md transition-all hover:shadow-lg w-full sm:w-auto"
  >
  <Bot className="w-5 h-5 text-indigo-500" />
  Get AI Demo

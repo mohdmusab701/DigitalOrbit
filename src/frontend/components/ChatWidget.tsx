@@ -184,7 +184,7 @@ export default function ChatWidget() {
  animate={{ opacity: 1, y: 0, scale: 1 }}
  exit={{ opacity: 0, y: 20, scale: 0.95 }}
  transition={{ duration: 0.25, ease: "easeOut" }}
- className="fixed bottom-24 right-4 sm:right-6 z-[9999] w-[calc(100%-2rem)] sm:w-[400px] h-[520px] bg-card rounded-2xl shadow-2xl shadow-black/20 dark:shadow-black/50 border border-slate-200/50 /50 flex flex-col overflow-hidden"
+ className="fixed bottom-24 right-4 sm:right-6 z-[9999] w-[calc(100%-2rem)] sm:w-[400px] h-[520px] bg-card rounded-2xl shadow-2xl shadow-black/20 dark:shadow-black/50 border border-border flex flex-col overflow-hidden"
  >
  {/* Header */}
  <div className="bg-gradient-to-r from-primary-600 to-blue-600 px-5 py-4 flex items-center justify-between shrink-0">
@@ -228,7 +228,7 @@ export default function ChatWidget() {
  className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-[13px] leading-relaxed ${
  msg.role === "user"
  ? "bg-primary-600 text-white rounded-br-md"
- : "bg-muted text-foreground rounded-bl-md border border-slate-200/50 /30"
+ : "bg-muted text-foreground rounded-bl-md border border-border"
  }`}
  >
  {renderContent(msg.content)}
@@ -249,7 +249,7 @@ export default function ChatWidget() {
  <div className="w-7 h-7 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center shrink-0">
  <Bot className="w-4 h-4 text-primary-600 dark:text-primary-400" />
  </div>
- <div className="bg-muted border border-slate-200/50 /30 px-4 py-3 rounded-2xl rounded-bl-md">
+ <div className="bg-muted border border-border px-4 py-3 rounded-2xl rounded-bl-md">
  <div className="flex gap-1">
  <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce [animation-delay:0ms]" />
  <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce [animation-delay:150ms]" />
@@ -262,7 +262,7 @@ export default function ChatWidget() {
  </div>
 
  {/* Input */}
- <div className="shrink-0 border-t border-slate-200/50 /50 p-3 bg-card">
+ <div className="shrink-0 border-t border-border p-3 bg-card">
  <div className="flex items-center gap-2">
  <input
  ref={inputRef}

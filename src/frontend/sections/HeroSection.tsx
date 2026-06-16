@@ -85,7 +85,7 @@ export default function HeroSection() {
  </Link>
  <Link
  href="/portfolio"
- className="group inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-foreground font-semibold rounded-2xl border border-slate-200 dark:border-white/10 transition-all hover:shadow-lg"
+ className="group inline-flex items-center gap-2 px-8 py-4 bg-card dark:bg-white/5 hover:bg-muted dark:hover:bg-white/10 text-foreground font-semibold rounded-2xl border border-border dark:border-white/10 transition-all hover:shadow-lg"
  >
  <Play className="w-4 h-4" />
  View Our Work

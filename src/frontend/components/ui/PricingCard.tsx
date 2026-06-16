@@ -65,7 +65,7 @@ export default function PricingCard({ plan, index }: PricingCardProps) {
  className={`block w-full text-center py-3.5 px-6 rounded-xl font-semibold text-sm transition-all active:scale-95 mb-8 ${
  plan.popular
  ? 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/25 hover:shadow-primary-600/40'
- : 'bg-slate-100 dark:bg-white/5 hover:bg-primary-50 dark:hover:bg-primary-900/20 text-foreground hover:text-primary-600 dark:hover:text-primary-400'
+ : 'bg-muted dark:bg-white/5 hover:bg-primary-50 dark:hover:bg-primary-900/20 text-foreground hover:text-primary-600 dark:hover:text-primary-400'
  }`}
  >
  {plan.cta}
@@ -88,7 +88,7 @@ export default function PricingCard({ plan, index }: PricingCardProps) {
  ))}
  {plan.notIncluded.map((feature: string) => (
  <div key={feature} className="flex items-start gap-3 opacity-50">
- <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
+ <div className="w-5 h-5 rounded-full bg-muted dark:bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
  <X className="w-3 h-3 text-muted-foreground" />
  </div>
  <span className="text-sm text-muted-foreground line-through">

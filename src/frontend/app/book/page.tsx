@@ -218,13 +218,13 @@ export default function BookPage() {
  <div className="flex gap-2">
  <button
  onClick={prevWeek}
- className="p-2 border border-border rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+ className="p-2 border border-border rounded-lg hover:bg-muted dark:hover:bg-white/5 transition-colors"
  >
  <ChevronLeft className="w-5 h-5 text-muted-foreground" />
  </button>
  <button
  onClick={nextWeek}
- className="p-2 border border-border rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+ className="p-2 border border-border rounded-lg hover:bg-muted dark:hover:bg-white/5 transition-colors"
  >
  <ChevronRight className="w-5 h-5 text-muted-foreground" />
  </button>
@@ -234,7 +234,7 @@ export default function BookPage() {
  {/* Days Grid */}
  <div className="grid grid-cols-7 gap-2 mb-8">
  {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
- <div key={day} className="text-center text-xs font-semibold text-slate-500 uppercase py-2">
+ <div key={day} className="text-center text-xs font-semibold text-muted-foreground uppercase py-2">
  {day}
  </div>
  ))}
@@ -290,7 +290,7 @@ export default function BookPage() {
  <button
  onClick={handleNextStep}
  disabled={!selectedDate || !selectedTime}
- className="px-8 py-3 bg-foreground text-background rounded-xl font-medium hover:bg-slate-800 dark:hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+ className="px-8 py-3 bg-foreground text-background rounded-xl font-medium hover:bg-slate-800 dark:hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
  >
  Next Step
  </button>
@@ -388,7 +388,7 @@ export default function BookPage() {
  className="w-4 h-4 text-primary-600 focus:ring-primary-500"
  />
  <div className="flex items-center gap-2">
- <type.icon className={`w-4 h-4 ${formData.meetingType === type.id ? "text-primary-600" : "text-slate-500"}`} />
+ <type.icon className={`w-4 h-4 ${formData.meetingType === type.id ? "text-primary-600" : "text-muted-foreground"}`} />
  <span className={`text-sm font-medium ${formData.meetingType === type.id ? "text-primary-900 dark:text-primary-100" : "text-muted-foreground"}`}>
  {type.id}
  </span>
@@ -413,7 +413,7 @@ export default function BookPage() {
  <button
  type="button"
  onClick={() => setStep(1)}
- className="px-6 py-3 text-muted-foreground font-medium hover:text-slate-900 dark:hover:text-white transition-colors"
+ className="px-6 py-3 text-muted-foreground font-medium hover:text-foreground dark:hover:text-white transition-colors"
  >
  Back
  </button>

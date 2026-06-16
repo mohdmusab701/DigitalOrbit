@@ -151,7 +151,7 @@ export default function AdminProjectDetailsPage() {
  <div>
  <button 
  onClick={() => router.push("/admin/projects")}
- className="flex items-center gap-1 text-sm text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors mb-2"
+ className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors mb-2"
  >
  <ChevronLeft className="w-4 h-4" /> Back to Projects
  </button>
@@ -288,7 +288,7 @@ export default function AdminProjectDetailsPage() {
  <button
  type="button"
  onClick={() => router.push("/admin/projects")}
- className="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-muted-foreground rounded-lg transition-colors font-medium text-sm"
+ className="px-6 py-2.5 bg-muted hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-muted-foreground rounded-lg transition-colors font-medium text-sm"
  >
  Cancel
  </button>

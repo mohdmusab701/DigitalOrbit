@@ -131,7 +131,7 @@ export default function AdminProjectsPage() {
  case "Testing": return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800";
  case "Completed": return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-800";
  case "On Hold": return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800";
- default: return "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border-border";
+ default: return "bg-muted text-foreground dark:bg-slate-800 dark:text-slate-300 border-border";
  }
  };
 
@@ -141,7 +141,7 @@ export default function AdminProjectsPage() {
  <div>
  <button 
  onClick={() => router.push("/admin")}
- className="flex items-center gap-1 text-sm text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors mb-2"
+ className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors mb-2"
  >
  <ChevronLeft className="w-4 h-4" /> Back to Dashboard
  </button>
@@ -160,7 +160,7 @@ export default function AdminProjectsPage() {
  {/* Stats Cards */}
  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
  <div className="bg-card border border-border rounded-xl p-4 shadow-sm flex items-center gap-4">
- <div className="w-12 h-12 bg-slate-50 dark:bg-white/5 rounded-full flex items-center justify-center">
+ <div className="w-12 h-12 bg-muted dark:bg-white/5 rounded-full flex items-center justify-center">
  <FolderOpen className="w-6 h-6 text-muted-foreground" />
  </div>
  <div>
@@ -253,7 +253,7 @@ export default function AdminProjectsPage() {
  <div className="overflow-x-auto">
  <table className="w-full text-left border-collapse whitespace-nowrap">
  <thead>
- <tr className="bg-slate-50 dark:bg-white/5 border-b border-border">
+ <tr className="bg-muted dark:bg-white/5 border-b border-border">
  <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Project Name</th>
  <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Client</th>
  <th className="px-6 py-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Status</th>
@@ -265,7 +265,7 @@ export default function AdminProjectsPage() {
  <tr 
  key={project._id} 
  onClick={() => router.push(`/admin/projects/${project._id}`)}
- className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors cursor-pointer"
+ className="hover:bg-muted dark:hover:bg-card/[0.02] transition-colors cursor-pointer"
  >
  <td className="px-6 py-4">
  <div className="font-medium text-foreground flex items-center gap-2">
@@ -314,14 +314,14 @@ export default function AdminProjectsPage() {
  <button
  onClick={handlePrevPage}
  disabled={currentPage === 1}
- className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+ className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
  >
  <ChevronLeft className="w-4 h-4" />
  </button>
  <button
  onClick={handleNextPage}
  disabled={currentPage === pagination.totalPages}
- className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+ className="p-2 rounded-lg border border-border text-muted-foreground hover:bg-muted dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
  >
  <ChevronRight className="w-4 h-4" />
  </button>

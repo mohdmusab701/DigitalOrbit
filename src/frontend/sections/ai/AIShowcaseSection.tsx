@@ -32,9 +32,9 @@ export default function AIShowcaseSection() {
  
  {/* Decorative Neural Network-like pattern */}
  <div className="absolute inset-0 opacity-20">
- <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white]" />
- <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-white rounded-full shadow-[0_0_15px_white]" />
- <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white]" />
+ <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-card rounded-full shadow-[0_0_10px_white]" />
+ <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-card rounded-full shadow-[0_0_15px_white]" />
+ <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-card rounded-full shadow-[0_0_10px_white]" />
  <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
  <line x1="25%" y1="50%" x2="66%" y2="33%" stroke="white" strokeWidth="1" strokeDasharray="4 4" />
  <line x1="66%" y1="33%" x2="75%" y2="75%" stroke="white" strokeWidth="1" strokeDasharray="4 4" />
