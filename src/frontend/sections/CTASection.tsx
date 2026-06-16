@@ -34,7 +34,7 @@ export default function CTASection() {
  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
  <Link
  href="/contact"
- className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-900 font-semibold rounded-2xl hover:bg-primary-50 transition-all hover:shadow-xl hover:shadow-white/20 hover:scale-[1.02] active:scale-[0.98]"
+ className="group inline-flex items-center gap-2 px-8 py-4 bg-card text-foreground font-semibold rounded-2xl border border-border hover:bg-muted transition-all hover:shadow-xl hover:shadow-white/20 hover:scale-[1.02] active:scale-[0.98]"
  >
  Get a Free Consultation
  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

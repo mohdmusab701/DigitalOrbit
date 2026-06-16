@@ -20,23 +20,14 @@ const navLinks = [
 export default function Navbar() {
  const [isOpen, setIsOpen] = useState(false);
  const [scrolled, setScrolled] = useState(false);
- const [mounted, setMounted] = useState(false);
- const { isDark, toggleTheme } = useTheme();
+ const { isDark, mounted, toggleTheme } = useTheme();
  const pathname = usePathname();
-
- useEffect(() => {
- setMounted(true);
- }, []);
 
  useEffect(() => {
  const handleScroll = () => setScrolled(window.scrollY > 20);
  window.addEventListener('scroll', handleScroll);
  return () => window.removeEventListener('scroll', handleScroll);
  }, []);
-
- useEffect(() => {
- setIsOpen(false);
- }, [pathname]);
 
  return (
  <motion.nav
@@ -168,6 +159,7 @@ export default function Navbar() {
  >
  <Link
  href={link.path}
+ onClick={() => setIsOpen(false)}
  className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
  isActive
  ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
@@ -187,6 +179,7 @@ export default function Navbar() {
  >
  <Link
  href="/book"
+ onClick={() => setIsOpen(false)}
  className="block w-full text-center px-5 py-3 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-xl transition-all"
  >
  Book a Call

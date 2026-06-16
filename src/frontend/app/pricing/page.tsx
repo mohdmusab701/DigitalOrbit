@@ -106,7 +106,7 @@ export default function PricingPage() {
  </p>
  <Link
  href="/contact"
- className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-900 font-semibold rounded-2xl hover:bg-primary-50 transition-all hover:shadow-xl"
+ className="inline-flex items-center gap-2 px-8 py-4 bg-card text-foreground font-semibold rounded-2xl border border-border hover:bg-muted transition-all hover:shadow-xl"
  >
  Contact Sales
  </Link>

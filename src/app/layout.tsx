@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "@/frontend/styles/globals.css";
 import { ThemeProvider } from "@/frontend/hooks/useTheme";
@@ -44,6 +44,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0e1a" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-50 antialiased selection:bg-primary-500/30`}
+        className={`${inter.className} bg-background text-foreground antialiased selection:bg-primary-500/30 transition-colors duration-300`}
       >
         <ThemeProvider>
           <Navbar />
@@ -64,4 +71,3 @@ export default function RootLayout({
     </html>
   );
 }
-

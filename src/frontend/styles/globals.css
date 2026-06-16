@@ -6,8 +6,14 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
   --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-dark-bg: var(--background);
+  --color-dark-surface: var(--card);
 
   --color-primary-50: #eff6ff;
   --color-primary-100: #dbeafe;
@@ -28,19 +34,29 @@
 }
 
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #0f172a;
   --card: #ffffff;
+  --card-foreground: #0f172a;
   --border: #e2e8f0;
   --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --input: #ffffff;
+  --ring: #3b82f6;
 }
 
 .dark {
+  color-scheme: dark;
   --background: #0a0e1a;
   --foreground: #f8fafc;
   --card: #111827;
-  --border: #1f2937;
+  --card-foreground: #f8fafc;
+  --border: #243044;
   --muted: #0f172a;
+  --muted-foreground: #94a3b8;
+  --input: #111827;
+  --ring: #60a5fa;
 }
 
 /* Custom scrollbar */
@@ -64,9 +80,29 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body,
+.bg-background,
+.bg-card,
+.bg-muted,
+.border-border,
+.text-foreground,
+.text-muted-foreground {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
 }
 
 /* Glassmorphism utility */
